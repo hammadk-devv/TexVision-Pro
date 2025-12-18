@@ -1,0 +1,16 @@
+numpy
+pandas
+matplotlib
+opencv-python
+scikit-learn
+pyyaml
+tqdm
+
+# Experiment tracking
+wandb
+
+# Federated learning (later)
+flwr
+
+# Explainability (later)
+captum
