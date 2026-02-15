@@ -201,10 +201,10 @@ If you use this project in your research, please cite:
 ```bibtex
 @misc{texvision-pro,
   title={TexVision-Pro: AI-Powered Fabric Defect Detection},
-  author={Your Name},
+  author= Hammad Khan,
   year={2026},
-  publisher={GitHub},
-  url={https://github.com/yourusername/TexVision-Pro}
+  publisher={hammadk-devv},
+  url={https://github.com/hammadk-devv/TexVision-Pro}
 }
 ```
 
