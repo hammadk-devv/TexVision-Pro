@@ -1,0 +1,90 @@
+datasets:
+  dtd:
+    name: "dtd"
+    root_dir: "./data/dtd"
+    num_classes: 47
+    splits:
+      train: 0.6
+      val: 0.2
+      test: 0.2
+    image_size: 224
+    batch_size: 32
+    num_workers: 4
+    transforms:
+      train:
+        resize: 256
+        random_crop: 224
+        random_horizontal_flip: True
+        normalize:
+          mean: [0.485, 0.456, 0.406]
+          std: [0.229, 0.224, 0.225]
+      val:
+        resize: 256
+        center_crop: 224
+        normalize:
+          mean: [0.485, 0.456, 0.406]
+          std: [0.229, 0.224, 0.225]
+      test:
+        resize: 256
+        center_crop: 224
+        normalize:
+          mean: [0.485, 0.456, 0.406]
+          std: [0.229, 0.224, 0.225]
+
+  tilda:
+    name: "tilda"
+    root_dir: "./data/TILDA"
+    num_classes: 5 # Found: good, hole, objects, oil spot, thread error
+    splits:
+      train: 0.7
+      val: 0.15
+      test: 0.15
+    image_size: 224
+    batch_size: 32
+    num_workers: 0 # Reduced to 0 (main thread) to fix "PageFile" error and reduce memory overhead
+    transforms:
+      train:
+        resize: 256
+        random_crop: 224
+        random_horizontal_flip: True
+        normalize:
+          mean: [0.485, 0.456, 0.406]
+          std: [0.229, 0.224, 0.225]
+      val:
+        resize: 256
+        center_crop: 224
+        normalize:
+          mean: [0.485, 0.456, 0.406]
+          std: [0.229, 0.224, 0.225]
+      test:
+        resize: 256
+        center_crop: 224
+        normalize:
+          mean: [0.485, 0.456, 0.406]
+          std: [0.229, 0.224, 0.225]
+
+  kth_tips:
+    name: "kth_tips"
+    root_dir: "./data/kth_tips"
+    num_classes: 10
+    splits:
+      train: 0.7
+      val: 0.15
+      test: 0.15
+    image_size: 224
+    batch_size: 32
+    num_workers: 4
+    transforms:
+      train:
+        resize: 256
+        random_crop: 224
+        random_horizontal_flip: True
+        normalize:
+          mean: [0.485, 0.456, 0.406]
+          std: [0.229, 0.224, 0.225]
+      val:
+        resize: 256
+        center_crop: 224
+        normalize:
+          mean: [0.485, 0.456, 0.406]
+          std: [0.229, 0.224, 0.225]

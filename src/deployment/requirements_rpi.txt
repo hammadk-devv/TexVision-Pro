@@ -1,0 +1,26 @@
+# Raspberry Pi Deployment Requirements
+# Optimized for ARM architecture and limited resources
+
+# Core dependencies (lightweight versions)
+numpy>=1.23.0,<1.24.0  # Compatible with RPi
+opencv-python-headless>=4.7.0  # No GUI dependencies
+Pillow>=9.5.0
+
+# ONNX Runtime for ARM
+onnxruntime>=1.15.0  # ARM64 compatible
+
+# PyTorch for ARM (CPU only)
+# Install separately with: pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+
+# Web interface
+flask>=2.3.0
+flask-cors>=4.0.0
+
+# Configuration
+pyyaml>=6.0
+
+# Camera support (install on RPi only)
+# picamera2  # Install via: sudo apt-get install python3-picamera2
+
+# Utilities
+tqdm>=4.65.0

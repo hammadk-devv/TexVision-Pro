@@ -1,0 +1,49 @@
+# Model selection
+model: yolov8s.pt  # Small model - more capacity than nano
+
+# Dataset configuration
+data: data/TILDA_yolo/data.yaml
+
+# Training parameters
+epochs: 100
+batch: 8   # fits in memory for 's' model
+imgsz: 768  # Higher resolution for real TILDA data
+
+# Device settings
+device: 0  # 0 for GPU, 'cpu' for CPU
+workers: 4  # Number of data loading workers
+
+# Optimization
+patience: 30  # Increased patience
+optimizer: AdamW
+lr0: 0.001  # Reduced for more stable, nuanced learning
+lrf: 0.01   # Final learning rate (lr0 * lrf)
+
+# Model saving
+save: true
+save_period: -1  # Save only best model (-1), or every N epochs
+
+# Validation
+val: true
+plots: true  # Generate training plots
+
+# Performance
+amp: false  # Disabled for stability on older GPUs (GTX 1060)
+cache: false  # Cache images in RAM (set true if enough memory)
+
+# Data augmentation (optimized for fabric textures/small defects)
+hsv_h: 0.015  # Hue augmentation
+hsv_s: 0.7    # Saturation augmentation
+hsv_v: 0.4    # Value augmentation
+degrees: 0.0      # Disable rotation for fabric alignment
+translate: 0.05   # Reduced
+scale: 0.2        # Reduced
+shear: 0.0     # Shear (minimal for fabric)
+perspective: 0.0  # Perspective (minimal for fabric)
+flipud: 0.0       # Fabric usually has a fixed orientation
+fliplr: 0.5    # Horizontal flip probability
+mosaic: 0.0       # Disable mosaic for small defects
+mixup: 0.0     # Mixup (disabled for defect detection)
+
+# Advanced settings
+verbose: true

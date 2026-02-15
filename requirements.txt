@@ -1,16 +1,30 @@
+# Core ML & Visualization
+torch>=2.0.0
+torchvision>=0.15.0
 numpy
-pandas
 matplotlib
 opencv-python
 scikit-learn
+albumentations
+tensorboard
 pyyaml
 tqdm
+scipy
+seaborn
 
-# Experiment tracking
-wandb
+# YOLOv8 & Performance
+ultralytics>=8.0.0
+onnx>=1.15.0
+onnxruntime>=1.16.0
+onnxsim>=0.4.33
 
-# Federated learning (later)
-flwr
+# Deployment
+flask>=2.3.0
+flask-cors>=4.0.0
 
-# Explainability (later)
-captum
+# Testing & Utilities
+pytest-mock==3.15.1
+pyserial==3.5
+flask-wtf>=1.1.1
+flask-bcrypt>=1.0.1
+python-dotenv>=1.0.0

@@ -1,0 +1,20 @@
+model:
+  name: "resnet50" # Options: resnet18, resnet50, efficientnet_b0, vit_b_16
+  pretrained: True
+  num_classes: 47 # Will be overridden by dataset config if used together
+  dropout_rate: 0.5
+  freeze_backbone: False
+  
+  # Backbone specific settings
+  efficientnet:
+    version: "b0"
+  
+  vision_transformer:
+    patch_size: 16
+    hidden_dim: 768
+    num_heads: 12
+    num_layers: 12
+
+classifier_head:
+  type: "linear" # Options: linear, mlp
+  hidden_dims: [] # For MLP head

@@ -1,0 +1,25 @@
+# Integrated Pipeline Configuration
+
+# YOLO Configuration
+yolo:
+  model_path: models/yolov8s.pt
+  conf_threshold: 0.25  # Lower threshold to catch more defects
+  iou_threshold: 0.45   # NMS IoU threshold
+
+# ResNet Configuration
+resnet:
+  model_path: models/checkpoints/best_model.pth
+  conf_threshold: 0.80  # High threshold for classification confidence
+
+# Pipeline Settings
+pipeline:
+  crop_padding: 20      # Pixels to add around detected regions
+  min_defect_size: 32   # Minimum defect size to process (pixels)
+  device: cpu           # 'cpu' or 'cuda'
+
+# Visualization
+visualization:
+  show_yolo_class: true
+  show_resnet_class: true
+  show_confidence: true
+  color_by_class: true
